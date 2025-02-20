@@ -9,11 +9,15 @@ import MainLayout from '../layouts/MainLayout'
 export const router = createBrowserRouter([
   {
     path: '/',
-    element: <MainLayout />,
+    element:(
+          <PrivateRoute>
+            <MainLayout />
+          </PrivateRoute>
+        ),
     errorElement: <ErrorPage />,
     children: [
       {
-        path: '/',
+        index: true,
         element: <Home />,
       }
     ],
