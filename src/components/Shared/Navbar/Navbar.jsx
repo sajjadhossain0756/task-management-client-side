@@ -4,19 +4,22 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import useAuth from '../../../hooks/useAuth'
 import avatarImg from '../../../assets/images/placeholder.jpg'
-import logo from '../../../assets/images/logo-flat.png'
+import logo from '../../../assets/images/logo.png'
 const Navbar = () => {
   const { user, logOut } = useAuth()
   const [isOpen, setIsOpen] = useState(false)
 
   return (
     <div className='fixed w-full bg-white z-10 shadow-sm'>
-      <div className='py-4 border-b-[1px]'>
+      <div className='border-b-[1px]'>
         <Container>
           <div className='flex flex-row  items-center justify-between gap-3 md:gap-0'>
             {/* Logo */}
             <Link to='/'>
-              <img src={logo} alt='logo' width='100' height='100' />
+              <figure className='flex items-center'>
+                <img src={logo} alt='logo' width='80' height='80' />
+                <span className='font-bold text-2xl'>Task Management</span>
+                </figure>
             </Link>
             {/* Dropdown Menu */}
             <div className='relative'>
