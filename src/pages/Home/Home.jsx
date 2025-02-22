@@ -57,7 +57,7 @@ const Home = () => {
   const { data: tasks = [], refetch } = useQuery({
     queryKey: ['tasks'],
     queryFn: async () => {
-      const res = await axiosSecure.get(`http://localhost:3008/all_tasks`)
+      const res = await axiosSecure.get(`/all_tasks`)
       return res.data;
     }
   })
